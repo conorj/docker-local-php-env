@@ -24,12 +24,11 @@ CONTAINER_ID=$(
         -p 80:80 \
         --restart always \
         -v /var/run/docker.sock:/tmp/docker.sock:ro \
-        -v /usr/local/etc/nginx-proxy/dhparam:/etc/nginx/dhparam:ro \
         -v /usr/local/etc/nginx-proxy/certs:/etc/nginx/certs:ro  \
-        -v /usr/local/etc/nginx-proxy/conf.d/custom.conf:/etc/nginx/conf.d/custom.conf:ro  \
         jwilder/nginx-proxy
 )
-
+#        -v /usr/local/etc/nginx-proxy/dhparam:/etc/nginx/dhparam:ro \
+#        -v /usr/local/etc/nginx-proxy/conf.d/custom.conf:/etc/nginx/conf.d/custom.conf:ro  \
 echo "Created container $CONTAINER_ID."
 
 # Check if the network already exists.
