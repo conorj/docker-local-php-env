@@ -3,7 +3,7 @@ version: '2'
 services:
   php-nginx:
     environment:
-      VIRTUAL_HOST: my-project.local
+      VIRTUAL_HOST: ${VIRTUAL_HOST}
     networks:
       - default
       - nginx-proxy
